@@ -1,0 +1,1 @@
+"./main.obj" "./library/LCD16x2.obj" "./library/LM35_ADC.obj" "./library/UART_library.obj" "./library/clock.obj" "./library/sim800l.obj" "../lnk_msp430g2553.cmd" -llibc.a 

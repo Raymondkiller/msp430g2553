@@ -1,0 +1,568 @@
+******************************************************************************
+                  MSP430 Linker PC v4.1.1                      
+******************************************************************************
+>> Linked Sun Apr 13 10:26:24 2014
+
+OUTPUT FILE NAME:   <I2C_USCI_G2553_Read_Sensor.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000cb84
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SFR                   00000000   00000010  00000000  00000010  RWIX
+  PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
+  PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
+  RAM                   00000200   00000200  0000018e  00000072  RWIX
+  INFOD                 00001000   00000040  00000000  00000040  RWIX
+  INFOC                 00001040   00000040  00000000  00000040  RWIX
+  INFOB                 00001080   00000040  00000000  00000040  RWIX
+  INFOA                 000010c0   00000040  00000000  00000040  RWIX
+  FLASH                 0000c000   00003fe0  00000cba  00003326  RWIX
+  INT00                 0000ffe0   00000002  00000000  00000002  RWIX
+  INT01                 0000ffe2   00000002  00000000  00000002  RWIX
+  INT02                 0000ffe4   00000002  00000000  00000002  RWIX
+  INT03                 0000ffe6   00000002  00000000  00000002  RWIX
+  INT04                 0000ffe8   00000002  00000000  00000002  RWIX
+  INT05                 0000ffea   00000002  00000000  00000002  RWIX
+  INT06                 0000ffec   00000002  00000000  00000002  RWIX
+  INT07                 0000ffee   00000002  00000002  00000000  RWIX
+  INT08                 0000fff0   00000002  00000000  00000002  RWIX
+  INT09                 0000fff2   00000002  00000002  00000000  RWIX
+  INT10                 0000fff4   00000002  00000000  00000002  RWIX
+  INT11                 0000fff6   00000002  00000000  00000002  RWIX
+  INT12                 0000fff8   00000002  00000000  00000002  RWIX
+  INT13                 0000fffa   00000002  00000000  00000002  RWIX
+  INT14                 0000fffc   00000002  00000000  00000002  RWIX
+  RESET                 0000fffe   00000002  00000002  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.init_array 
+*          0    0000c000    00000000     UNINITIALIZED
+
+.bss       0    00000200    000000b6     UNINITIALIZED
+                  00000200    000000b6     main.obj (.bss)
+
+.TI.noinit 
+*          0    00000200    00000000     UNINITIALIZED
+
+.data      0    000002b6    00000088     
+                  000002b6    00000088     main.obj (.data)
+
+.TI.persistent 
+*          0    000002b6    00000000     UNINITIALIZED
+
+.stack     0    000003b0    00000050     UNINITIALIZED
+                  000003b0    00000002     rts430_eabi.lib : boot.obj (.stack)
+                  000003b2    0000004e     --HOLE--
+
+.text      0    0000c000    00000c24     
+                  0000c000    000002c8     main.obj (.text:Setup_MPU6050)
+                  0000c2c8    0000012e     main.obj (.text:Filters_Accel)
+                  0000c3f6    0000012e     main.obj (.text:Filters_Gyro)
+                  0000c524    00000114     main.obj (.text:Select_Clock)
+                  0000c638    000000da     main.obj (.text:main)
+                  0000c712    00000092     main.obj (.text:WordRead_I2C_USCI)
+                  0000c7a4    0000005e     rts430_eabi.lib : copy_decompress_rle.obj (.text:__TI_decompress_rle_core)
+                  0000c802    0000005e                     : autoinit.obj (.text:_auto_init)
+                  0000c860    0000005c     main.obj (.text:Timer_A0)
+                  0000c8bc    00000058     rts430_eabi.lib : div32u.obj (.text)
+                  0000c914    00000056     main.obj (.text:ByteWrite_I2C_USCI)
+                  0000c96a    00000056     main.obj (.text:Get_Gyro_Values)
+                  0000c9c0    0000004a     main.obj (.text:Get_Accel_Values)
+                  0000ca0a    00000046     main.obj (.text:Set_PWM)
+                  0000ca50    00000040     rts430_eabi.lib : div32s.obj (.text)
+                  0000ca90    0000003a     main.obj (.text:UART_Write_String)
+                  0000caca    00000032     main.obj (.text:Init_I2C_USCI)
+                  0000cafc    00000032     main.obj (.text:UART_Init)
+                  0000cb2e    0000002c     rts430_eabi.lib : div16s.obj (.text)
+                  0000cb5a    0000002a     main.obj (.text:_delay_ms)
+                  0000cb84    0000001a     rts430_eabi.lib : boot.obj (.text:_c_int00_noexit)
+                  0000cb9e    00000016                     : div16u.obj (.text)
+                  0000cbb4    00000014                     : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  0000cbc8    00000012                     : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
+                  0000cbda    00000012                     : memcpy.obj (.text:memcpy)
+                  0000cbec    00000010                     : epilog.obj (.text)
+                  0000cbfc    0000000e     main.obj (.text:USCI0RX_ISR)
+                  0000cc0a    0000000c     main.obj (.text:UART_Write_Char)
+                  0000cc16    00000006     rts430_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24:__TI_decompress_rle24)
+                  0000cc1c    00000004                     : pre_init.obj (.text:_system_pre_init)
+                  0000cc20    00000004                     : exit.obj (.text:abort)
+
+.const     0    0000cc24    00000060     
+                  0000cc24    00000060     main.obj (.const:.string)
+
+.cinit     0    0000cc84    00000036     
+                  0000cc84    00000023     (.cinit..data.load) [load image, compression = rle]
+                  0000cca7    00000001     --HOLE-- [fill = 0]
+                  0000cca8    00000006     (__TI_handler_table)
+                  0000ccae    00000004     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000ccb2    00000008     (__TI_cinit_table)
+
+USCIAB0RX 
+*          0    0000ffee    00000002     
+                  0000ffee    00000002     main.obj (.int07)
+
+TIMER0_A0 
+*          0    0000fff2    00000002     
+                  0000fff2    00000002     main.obj (.int09)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430_eabi.lib : boot.obj (.reset)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 0000ccb2 records: 2, size/record: 4, table size: 8
+	.data: load addr=0000cc84, load size=00000023 bytes, run addr=000002b6, run size=00000088 bytes, compression=rle
+	.bss: load addr=0000ccae, load size=00000004 bytes, run addr=00000200, run size=000000b6 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0000cca8 records: 3, size/record: 2, table size: 6
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_rle24
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+000002e0   ACCEL_XA
+000002f2   ACCEL_XANGLE
+000002ec   ACCEL_XDECAC
+00000244   ACCEL_XFilter
+000002d4   ACCEL_XOUT
+000002da   ACCEL_XOUT_PAST
+000002e6   ACCEL_XV
+000002e2   ACCEL_YA
+000002f6   ACCEL_YANGLE
+000002ee   ACCEL_YDECAC
+00000254   ACCEL_YFilter
+000002d6   ACCEL_YOUT
+000002dc   ACCEL_YOUT_PAST
+000002e8   ACCEL_YV
+000002e4   ACCEL_ZA
+000002fa   ACCEL_ZANGLE
+000002f0   ACCEL_ZDECAC
+00000264   ACCEL_ZFilter
+000002d8   ACCEL_ZOUT
+000002de   ACCEL_ZOUT_PAST
+000002ea   ACCEL_ZV
+0000004a   ADC10AE0
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000053   BCSCTL3
+0000c914   ByteWrite_I2C_USCI
+0000cc20   C$$EXIT
+00000059   CACTL1
+0000005a   CACTL2
+000010fb   CALBC1_12MHZ
+000010f9   CALBC1_16MHZ
+000010ff   CALBC1_1MHZ
+000010fd   CALBC1_8MHZ
+000010fa   CALDCO_12MHZ
+000010f8   CALDCO_16MHZ
+000010fe   CALDCO_1MHZ
+000010fc   CALDCO_8MHZ
+0000005b   CAPD
+00000056   DCOCTL
+000002fe   Decac_X0
+00000302   Decac_X1
+00000306   Decac_Y0
+0000030a   Decac_Y1
+0000030e   Decac_Z0
+00000312   Decac_Z1
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000c2c8   Filters_Accel
+0000c3f6   Filters_Gyro
+000002ca   GYRO_XANGLE
+00000214   GYRO_XFilter
+000002b8   GYRO_XOUT
+000002be   GYRO_XOUT_OFFSET
+000002c4   GYRO_XRATE
+000002cc   GYRO_YANGLE
+00000224   GYRO_YFilter
+000002ba   GYRO_YOUT
+000002c0   GYRO_YOUT_OFFSET
+000002c6   GYRO_YRATE
+000002ce   GYRO_ZANGLE
+00000234   GYRO_ZFilter
+000002bc   GYRO_ZOUT
+000002c2   GYRO_ZOUT_OFFSET
+000002c8   GYRO_ZRATE
+00000274   G_Filter
+0000c9c0   Get_Accel_Values
+0000c96a   Get_Gyro_Values
+00000000   IE1
+00000001   IE2
+00000002   IFG1
+00000003   IFG2
+0000caca   Init_I2C_USCI
+00000022   P1DIR
+00000025   P1IE
+00000024   P1IES
+00000023   P1IFG
+00000020   P1IN
+00000021   P1OUT
+00000027   P1REN
+00000026   P1SEL
+00000041   P1SEL2
+0000002a   P2DIR
+0000002d   P2IE
+0000002c   P2IES
+0000002b   P2IFG
+00000028   P2IN
+00000029   P2OUT
+0000002f   P2REN
+0000002e   P2SEL
+00000042   P2SEL2
+0000001a   P3DIR
+00000018   P3IN
+00000019   P3OUT
+00000010   P3REN
+0000001b   P3SEL
+00000043   P3SEL2
+00000338   PWM0
+0000033a   PWM1
+0000033c   PWM2
+0000c524   Select_Clock
+0000ca0a   Set_PWM
+0000c000   Setup_MPU6050
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000160   TA0CTL
+0000012e   TA0IV
+00000170   TA0R
+00000192   TA1CCR0
+00000194   TA1CCR1
+00000196   TA1CCR2
+00000182   TA1CCTL0
+00000184   TA1CCTL1
+00000186   TA1CCTL2
+00000180   TA1CTL
+0000011e   TA1IV
+00000190   TA1R
+000002b6   TEMP_OUT
+0000c860   Timer_A0
+0000cafc   UART_Init
+0000cc0a   UART_Write_Char
+0000ca90   UART_Write_String
+0000005d   UCA0ABCTL
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+0000005f   UCA0IRRCTL
+0000005e   UCA0IRTCTL
+00000064   UCA0MCTL
+00000066   UCA0RXBUF
+00000065   UCA0STAT
+00000067   UCA0TXBUF
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006c   UCB0I2CIE
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000006e   UCB0RXBUF
+0000006d   UCB0STAT
+0000006f   UCB0TXBUF
+0000cbfc   USCI0RX_ISR
+00000120   WDTCTL
+0000c712   WordRead_I2C_USCI
+00000400   __STACK_END
+00000050   __STACK_SIZE
+0000ccb2   __TI_CINIT_Base
+0000ccba   __TI_CINIT_Limit
+0000cca8   __TI_Handler_Table_Base
+0000ccae   __TI_Handler_Table_Limit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+00000001   __TI_args_main
+0000cbc8   __TI_decompress_none
+0000cc16   __TI_decompress_rle24
+00000001   __TI_exit
+0000cbb4   __TI_zero_init
+ffffffff   __binit__
+ffffffff   __c_args__
+0000cb2e   __mspabi_divi
+0000ca50   __mspabi_divli
+0000cb9e   __mspabi_divu
+0000c8bc   __mspabi_divul
+0000cbf8   __mspabi_func_epilog_1
+0000cbf6   __mspabi_func_epilog_2
+0000cbf4   __mspabi_func_epilog_3
+0000cbf2   __mspabi_func_epilog_4
+0000cbf0   __mspabi_func_epilog_5
+0000cbee   __mspabi_func_epilog_6
+0000cbec   __mspabi_func_epilog_7
+0000cb2e   __mspabi_remi
+0000ca50   __mspabi_remli
+0000cb9e   __mspabi_remu
+0000c8bc   __mspabi_remul
+0000c802   _auto_init
+0000cb84   _c_int00
+0000cb84   _c_int00_noexit
+0000cb5a   _delay_ms
+0000fffe   _reset_vector
+000003b0   _stack
+0000cc1c   _system_pre_init
+00000336   abc
+0000cc20   abort
+ffffffff   binit
+00000284   buff
+000002d2   dt
+00000326   exInt
+0000032a   eyInt
+0000032e   ezInt
+000002d0   gyro_ratio
+00000334   i
+0000c638   main
+0000cbda   memcpy
+00000316   q0
+0000031a   q1
+0000031e   q2
+00000322   q3
+00000200   string
+00000332   temp
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IE1
+00000001   IE2
+00000001   __TI_args_main
+00000001   __TI_exit
+00000002   IFG1
+00000003   IFG2
+00000010   P3REN
+00000018   P3IN
+00000019   P3OUT
+0000001a   P3DIR
+0000001b   P3SEL
+00000020   P1IN
+00000021   P1OUT
+00000022   P1DIR
+00000023   P1IFG
+00000024   P1IES
+00000025   P1IE
+00000026   P1SEL
+00000027   P1REN
+00000028   P2IN
+00000029   P2OUT
+0000002a   P2DIR
+0000002b   P2IFG
+0000002c   P2IES
+0000002d   P2IE
+0000002e   P2SEL
+0000002f   P2REN
+00000041   P1SEL2
+00000042   P2SEL2
+00000043   P3SEL2
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+0000004a   ADC10AE0
+00000050   __STACK_SIZE
+00000053   BCSCTL3
+00000056   DCOCTL
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000059   CACTL1
+0000005a   CACTL2
+0000005b   CAPD
+0000005d   UCA0ABCTL
+0000005e   UCA0IRTCTL
+0000005f   UCA0IRRCTL
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000064   UCA0MCTL
+00000065   UCA0STAT
+00000066   UCA0RXBUF
+00000067   UCA0TXBUF
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+0000006c   UCB0I2CIE
+0000006d   UCB0STAT
+0000006e   UCB0RXBUF
+0000006f   UCB0TXBUF
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000011e   TA1IV
+00000120   WDTCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000012e   TA0IV
+00000160   TA0CTL
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000170   TA0R
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+00000180   TA1CTL
+00000182   TA1CCTL0
+00000184   TA1CCTL1
+00000186   TA1CCTL2
+00000190   TA1R
+00000192   TA1CCR0
+00000194   TA1CCR1
+00000196   TA1CCR2
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+00000200   string
+00000214   GYRO_XFilter
+00000224   GYRO_YFilter
+00000234   GYRO_ZFilter
+00000244   ACCEL_XFilter
+00000254   ACCEL_YFilter
+00000264   ACCEL_ZFilter
+00000274   G_Filter
+00000284   buff
+000002b6   TEMP_OUT
+000002b8   GYRO_XOUT
+000002ba   GYRO_YOUT
+000002bc   GYRO_ZOUT
+000002be   GYRO_XOUT_OFFSET
+000002c0   GYRO_YOUT_OFFSET
+000002c2   GYRO_ZOUT_OFFSET
+000002c4   GYRO_XRATE
+000002c6   GYRO_YRATE
+000002c8   GYRO_ZRATE
+000002ca   GYRO_XANGLE
+000002cc   GYRO_YANGLE
+000002ce   GYRO_ZANGLE
+000002d0   gyro_ratio
+000002d2   dt
+000002d4   ACCEL_XOUT
+000002d6   ACCEL_YOUT
+000002d8   ACCEL_ZOUT
+000002da   ACCEL_XOUT_PAST
+000002dc   ACCEL_YOUT_PAST
+000002de   ACCEL_ZOUT_PAST
+000002e0   ACCEL_XA
+000002e2   ACCEL_YA
+000002e4   ACCEL_ZA
+000002e6   ACCEL_XV
+000002e8   ACCEL_YV
+000002ea   ACCEL_ZV
+000002ec   ACCEL_XDECAC
+000002ee   ACCEL_YDECAC
+000002f0   ACCEL_ZDECAC
+000002f2   ACCEL_XANGLE
+000002f6   ACCEL_YANGLE
+000002fa   ACCEL_ZANGLE
+000002fe   Decac_X0
+00000302   Decac_X1
+00000306   Decac_Y0
+0000030a   Decac_Y1
+0000030e   Decac_Z0
+00000312   Decac_Z1
+00000316   q0
+0000031a   q1
+0000031e   q2
+00000322   q3
+00000326   exInt
+0000032a   eyInt
+0000032e   ezInt
+00000332   temp
+00000334   i
+00000336   abc
+00000338   PWM0
+0000033a   PWM1
+0000033c   PWM2
+000003b0   _stack
+00000400   __STACK_END
+000010f8   CALDCO_16MHZ
+000010f9   CALBC1_16MHZ
+000010fa   CALDCO_12MHZ
+000010fb   CALBC1_12MHZ
+000010fc   CALDCO_8MHZ
+000010fd   CALBC1_8MHZ
+000010fe   CALDCO_1MHZ
+000010ff   CALBC1_1MHZ
+0000c000   Setup_MPU6050
+0000c2c8   Filters_Accel
+0000c3f6   Filters_Gyro
+0000c524   Select_Clock
+0000c638   main
+0000c712   WordRead_I2C_USCI
+0000c802   _auto_init
+0000c860   Timer_A0
+0000c8bc   __mspabi_divul
+0000c8bc   __mspabi_remul
+0000c914   ByteWrite_I2C_USCI
+0000c96a   Get_Gyro_Values
+0000c9c0   Get_Accel_Values
+0000ca0a   Set_PWM
+0000ca50   __mspabi_divli
+0000ca50   __mspabi_remli
+0000ca90   UART_Write_String
+0000caca   Init_I2C_USCI
+0000cafc   UART_Init
+0000cb2e   __mspabi_divi
+0000cb2e   __mspabi_remi
+0000cb5a   _delay_ms
+0000cb84   _c_int00
+0000cb84   _c_int00_noexit
+0000cb9e   __mspabi_divu
+0000cb9e   __mspabi_remu
+0000cbb4   __TI_zero_init
+0000cbc8   __TI_decompress_none
+0000cbda   memcpy
+0000cbec   __mspabi_func_epilog_7
+0000cbee   __mspabi_func_epilog_6
+0000cbf0   __mspabi_func_epilog_5
+0000cbf2   __mspabi_func_epilog_4
+0000cbf4   __mspabi_func_epilog_3
+0000cbf6   __mspabi_func_epilog_2
+0000cbf8   __mspabi_func_epilog_1
+0000cbfc   USCI0RX_ISR
+0000cc0a   UART_Write_Char
+0000cc16   __TI_decompress_rle24
+0000cc1c   _system_pre_init
+0000cc20   C$$EXIT
+0000cc20   abort
+0000cca8   __TI_Handler_Table_Base
+0000ccae   __TI_Handler_Table_Limit
+0000ccb2   __TI_CINIT_Base
+0000ccba   __TI_CINIT_Limit
+0000fffe   _reset_vector
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+
+[211 symbols]

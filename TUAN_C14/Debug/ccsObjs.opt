@@ -1,0 +1,1 @@
+"./Main.obj" "./config.obj" "./effect.obj" "../lnk_msp430g2553.cmd" -l"libc.a" 
